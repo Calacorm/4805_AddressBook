@@ -2,6 +2,7 @@ package com.tyler.lab5;
 
 public class BuddyInfo {
 
+    //ID!
     private long id;
 
     private String name = null;
