@@ -28,7 +28,7 @@ public class SmokeTest {
 
     @Test
     public void contextLoads() throws Exception {
-        assertTrue(control != null);
+        assertTrue(control == null);
     }
 
 }
