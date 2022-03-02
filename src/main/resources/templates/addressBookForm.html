@@ -1,0 +1,40 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>All Buddies</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1> Address Book </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th> Name </th>
+                    <th> Address </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:if="${buds.empty}">
+                    <td colspan="2"> No Buddies Available </td>
+                </tr>
+                <tr th:each="bud : ${buds}">
+                    <td><span th:text="${bud.name}"> Name </span></td>
+                    <td><span th:text="${bud.address}"> Address </span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <a class="btn btn-success" href="#" th:href="@{/addressbook/create}"> Add Buddy </a>
+            <a class="btn btn-primary" href="#" th:href="@{/addressbook/edit}" th:classappend="${buds.empty} ? 'disabled' : ''"> Edit Buddy </a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
